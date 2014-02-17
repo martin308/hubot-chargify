@@ -1,0 +1,24 @@
+{
+  "name": "hubot-chargify",
+  "version": "1.0.0",
+  "description": "Hubot scripts for dealing with Chargify",
+  "main": "./index.coffee",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/martin308/hubot-chargify.git"
+  },
+  "keywords": [
+    "hubot",
+    "hubot-scripts",
+    "chargify"
+  ],
+  "author": "Martin Holman (http://martinholman.co.nz)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martin308/hubot-chargify/issues"
+  },
+  "homepage": "https://github.com/martin308/hubot-chargify",
+  "dependencies": {
+    "coffee-script": "~1.7.1"
+  }
+}
