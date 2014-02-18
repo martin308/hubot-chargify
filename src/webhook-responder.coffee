@@ -1,7 +1,7 @@
 module.exports = (robot) ->
-  robot.router.post '/hubot/chargify/webhook', (req, res) ->
+  robot.router.post '/hubot/chargify/webhook/:room_id', (req, res) ->
     data = req.body
-    console.log data.payload
+    room_id = req.params.room_id
     handlerName = './handlers/' + data.event
 
     try
@@ -9,7 +9,10 @@ module.exports = (robot) ->
     catch e
       console.log e
 
+    speak = (msg) ->
+      robot.messageRoom room_id, msg
+
     if handler?
-      handler data.payload, robot
+      handler speak, data.payload
 
     res.end 'Thanks'
