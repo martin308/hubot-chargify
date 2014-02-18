@@ -1,3 +1,20 @@
+# Description:
+#   Allows Hubot to respond to Chargify webhooks
+#
+# Dependencies:
+#   None
+#
+# Commands:
+#   None
+#
+# Configuration:
+#   None
+#
+# URLs:
+#   POST /hubot/chargify/webhook/:room_id
+#
+# Author:
+#   martin308
 module.exports = (robot) ->
   robot.router.post '/hubot/chargify/webhook/:room_id', (req, res) ->
     data = req.body
