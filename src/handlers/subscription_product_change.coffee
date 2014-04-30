@@ -1,5 +1,12 @@
 module.exports = (speak, payload) ->
   previous_product = payload.previous_product
   new_product = payload.subscription.product
+
+  message = "A customer just migrated from #{previous_product?.name} to #{new_product.name}"
+
   message_prefix = if new_product.price_in_cents > previous_product.price_in_cents then "Good news everybody!" else "Oh noes!"
-  speak "#{message_prefix} A customer just migrated from #{previous_product?.name} to #{new_product.name}"
+
+  if new_product.price_in_cents is previous_product.price_in_cents
+    speak message
+  else
+    speak "#{message_prefix} #{message}"
